@@ -24,7 +24,7 @@ class StatusService extends AbstractService
         return new StatusEntity([
             'id' => $status['id'],
             'name' => $status['name'],
-            'is_closed' => $status['is_closed']
+            'is_closed' => $status['is_closed'],
         ]);
     }
 }

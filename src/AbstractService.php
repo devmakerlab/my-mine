@@ -25,11 +25,10 @@ abstract class AbstractService
     {
         $items = [];
 
-        $maxLimit = $this->filters['limit'] ?? PHP_INT_MAX;
+        $maxLimit = $this->filters['limit'] ?? \PHP_INT_MAX;
         $offset = $this->filters['offset'] ?? 0;
 
         while ($maxLimit > 0) {
-
             if ($maxLimit > 100) {
                 $currentLimit = 100;
                 $maxLimit -= 100;
@@ -60,7 +59,7 @@ abstract class AbstractService
 
     public function addFilter(string $key, $value): self
     {
-        if (array_key_exists($key, $this->filters)) {
+        if (\array_key_exists($key, $this->filters)) {
             throw new ExistingFilterKeyException();
         }
 
@@ -71,7 +70,7 @@ abstract class AbstractService
 
     public function updateFilter(string $key, $value): self
     {
-        if (! array_key_exists($key, $this->filters)) {
+        if (! \array_key_exists($key, $this->filters)) {
             throw new NonExistingFilterKeyException();
         }
 
@@ -85,7 +84,7 @@ abstract class AbstractService
         return $this->filters;
     }
 
-    public function resetFilters()
+    public function resetFilters(): void
     {
         $this->filters = [];
     }

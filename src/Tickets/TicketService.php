@@ -36,7 +36,7 @@ class TicketService extends AbstractService
 
         $existingIncludes[] = 'journals';
 
-        $this->filters['include'] = join(',', $existingIncludes);
+        $this->filters['include'] = implode(',', $existingIncludes);
 
         return $this;
     }
@@ -54,8 +54,8 @@ class TicketService extends AbstractService
             'id' => $ticket['id'],
             'subject' => $ticket['subject'],
             'description' => $ticket['description'],
-            'start_date' => isset ($ticket['start_date']) ? new DateTime($ticket['start_date']) : null,
-            'due_date' => isset ($ticket['due_date']) ? new DateTime($ticket['due_date']) : null,
+            'start_date' => isset($ticket['start_date']) ? new DateTime($ticket['start_date']) : null,
+            'due_date' => isset($ticket['due_date']) ? new DateTime($ticket['due_date']) : null,
             'tracker_id' => $ticket['tracker']['id'],
             'tracker_name' => $ticket['tracker']['name'],
             'project_id' => $ticket['project']['id'],
@@ -71,8 +71,8 @@ class TicketService extends AbstractService
             'priority_id' => $ticket['priority']['id'],
             'priority_name' => $ticket['priority']['name'],
             'created_on' => $this->convertToTz($ticket['created_on'], 'Europe/Paris'),
-            'updated_on' => isset ($ticket['updated_on']) ? $this->convertToTz($ticket['updated_on'], 'Europe/Paris'): null,
-            'closed_on' => isset ($ticket['closed_on']) ? $this->convertToTz($ticket['closed_on'], 'Europe/Paris') : null,
+            'updated_on' => isset($ticket['updated_on']) ? $this->convertToTz($ticket['updated_on'], 'Europe/Paris'): null,
+            'closed_on' => isset($ticket['closed_on']) ? $this->convertToTz($ticket['closed_on'], 'Europe/Paris') : null,
             'journals' => $ticket['journals'] ?? [],
             'custom_fields' => $ticket['custom_fields'] ?? [],
             'changesets' => $ticket['changesets'] ?? [],

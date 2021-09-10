@@ -6,4 +6,6 @@ namespace DevMakerLab\MyMine\Exceptions;
 
 use Exception;
 
-class ExistingFilterKeyException extends Exception { }
+class ExistingFilterKeyException extends Exception
+{
+}

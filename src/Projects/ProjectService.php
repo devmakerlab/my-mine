@@ -39,7 +39,7 @@ class ProjectService extends AbstractService
             'is_public' => $project['is_public'],
             'inherit_members' => $project['inherit_members'],
             'created_on' => $this->convertToTz($project['created_on'], 'Europe/Paris'),
-            'updated_on' => isset ($project['updated_on']) ? $this->convertToTz($project['updated_on'], 'Europe/Paris'): null,
+            'updated_on' => isset($project['updated_on']) ? $this->convertToTz($project['updated_on'], 'Europe/Paris'): null,
         ]);
     }
 }

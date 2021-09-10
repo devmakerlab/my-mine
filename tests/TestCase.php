@@ -39,7 +39,8 @@ class TestCase extends \PHPUnit\Framework\TestCase
 
     protected function getAbstractService(): AbstractService
     {
-        return new class (new Client()) extends AbstractService { };
+        return new class(new Client()) extends AbstractService {
+        };
     }
 
     protected function getHttpService(?Client $client = null): HttpService

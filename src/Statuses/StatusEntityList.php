@@ -6,4 +6,6 @@ namespace DevMakerLab\MyMine\Statuses;
 
 use DevMakerLab\EntityList;
 
-class StatusEntityList extends EntityList { }
+class StatusEntityList extends EntityList
+{
+}
