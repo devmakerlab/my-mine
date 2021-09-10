@@ -1,0 +1,38 @@
+{
+    "name": "devmakerlab/my-mine",
+    "type": "library",
+    "require": {
+        "ext-json": "*",
+        "php": "^7.4|^8.0",
+        "devmakerlab/entities": "^3.1",
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.3",
+        "phpunit/phpunit": "^9.5",
+        "carbondate/carbon": "1.33.0",
+        "mockery/mockery": "^1.4"
+    },
+    "license": "WTFPL",
+    "autoload": {
+        "psr-4": {
+            "DevMakerLab\\MyMine\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anthony Meinder",
+            "email": "me@meinder-a.com"
+        },
+        {
+            "name": "Valentin Leguy",
+            "email": "leguy.val@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
